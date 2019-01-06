@@ -38,6 +38,12 @@ public class HelloWorldServer {
 
                         protected void initChannel(SocketChannel ch) throws Exception {
 //                            ch.pipeline().addLast("framer", new DelimiterBasedFrameDecoder(8192, Delimiters.lineDelimiter()));
+                            /**
+                             * StringEncoder 编码器
+                             * StringEncoder继承MessageToMessageEncoder，而MessageToMessageEncoder又继承ChannelOutboundHandlerAdapter
+                             * StringDecoder 解码器
+                             * StringDecoder继承MessageToMessageDecoder，而MessageToMessageDecoder又继承ChannelInboundHandlerAdapter
+                             */
                             ch.pipeline().addLast("decoder", new StringDecoder());
                             ch.pipeline().addLast("encoder", new StringEncoder());
                             ch.pipeline().addLast(new HelloWorldServerHandler());
