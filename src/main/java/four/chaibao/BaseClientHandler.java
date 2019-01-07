@@ -23,6 +23,7 @@ public class BaseClientHandler extends ChannelInboundHandlerAdapter {
                 + "an Goetz. His book will give We’ve reached an exciting point—in the next chapter;the counter is: 1 2222"
                 //+ "sdsa ddasd asdsadas dsadasdas").getBytes();
                 //在发送的信息中，加一个结束标志，例如两个远程端规定以行来切分数据，那么发送端，就需要在每个信息体的末尾加上行结束的标志
+                 //System.getProperty("line.separator")  这也是换行符,功能和"\n"是一致的
                 + "sdsa ddasd asdsadas dsadasdas"+ System.getProperty("line.separator")).getBytes();
     }
 
