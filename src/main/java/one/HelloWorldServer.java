@@ -44,6 +44,10 @@ public class HelloWorldServer {
                              * StringDecoder 解码器
                              * StringDecoder继承MessageToMessageDecoder，而MessageToMessageDecoder又继承ChannelInboundHandlerAdapter
                              */
+                            /**
+                             * 1.ChannelInboundHandler方向：先StringDecoder(先进行字节转化成实体即反序列化）,后HelloWorldServerHandler（进行业务处理)
+                             * 2.ChannelOutboundHandler方向：只有StringEncoder（把数据转化成二进制流即序列号)
+                             */
                             ch.pipeline().addLast("decoder", new StringDecoder());
                             ch.pipeline().addLast("encoder", new StringEncoder());
                             ch.pipeline().addLast(new HelloWorldServerHandler());
