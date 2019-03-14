@@ -29,7 +29,7 @@ public class HelloWorldClient {
                         public void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
                             /**
-                             * 有4个处理器，两个inbound类型的处理器，
+                             * 有4个处理器，三个inbound类型的处理器，
                              * 第一个是StringDecoder，
                              * 第二个就是BaseClient1Handler，上一个处理器已经把服务器端的信息转化成String
                              * 第三个就是BaseClient2Handler
